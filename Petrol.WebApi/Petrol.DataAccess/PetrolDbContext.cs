@@ -6,6 +6,9 @@ using System.Text;
 
 namespace Petrol.DataAccess
 {
+    /// <summary>
+    /// Entity Framework Data Context for the database
+    /// </summary>
     public class PetrolDbContext : DbContext
     {
         public DbSet<Question> Questions { get; set; }

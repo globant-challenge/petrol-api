@@ -60,11 +60,18 @@ namespace Petrol.WebApi.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, [FromBody] QuestionModel question)
         {
-            await _questionRepository.UpdateAsync(id, new Question
+            try
             {
-                AskedQuestion = question.Question,
-                Answer = question.Answer
-            });
+                await _questionRepository.UpdateAsync(id, new Question
+                {
+                    AskedQuestion = question.Question,
+                    Answer = question.Answer
+                });
+            }
+            catch (EntityNotFoundException)
+            {
+                return NotFound();
+            }            
 
             return Ok();
         }
@@ -72,7 +79,14 @@ namespace Petrol.WebApi.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            await _questionRepository.DeleteAsync(id);
+            try
+            {
+                await _questionRepository.DeleteAsync(id);
+            }
+            catch (EntityNotFoundException)
+            {
+                return NotFound();
+            }            
 
             return Ok();
         }
