@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petrol.WebApi", "Petrol.WebApi\Petrol.WebApi.csproj", "{D00EEC76-2970-4CA9-BCB0-D656B3DADCE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petrol.DataAccess", "Petrol.DataAccess\Petrol.DataAccess.csproj", "{1CEF3BE2-98BC-4F40-9912-65E015018827}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petrol.DataAccess", "Petrol.DataAccess\Petrol.DataAccess.csproj", "{1CEF3BE2-98BC-4F40-9912-65E015018827}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CC9565F1-F45D-45DD-A988-413A1AE70F92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petrol.WebApi.Tests", "Petrol.WebApi.Tests\Petrol.WebApi.Tests.csproj", "{157CDF31-E7A3-4A64-9F6E-F91481C63ECA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,16 @@ Global
 		{1CEF3BE2-98BC-4F40-9912-65E015018827}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CEF3BE2-98BC-4F40-9912-65E015018827}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CEF3BE2-98BC-4F40-9912-65E015018827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{157CDF31-E7A3-4A64-9F6E-F91481C63ECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{157CDF31-E7A3-4A64-9F6E-F91481C63ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{157CDF31-E7A3-4A64-9F6E-F91481C63ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{157CDF31-E7A3-4A64-9F6E-F91481C63ECA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{157CDF31-E7A3-4A64-9F6E-F91481C63ECA} = {CC9565F1-F45D-45DD-A988-413A1AE70F92}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E50A3FB-9AC7-4217-BD10-2C926EFC5278}

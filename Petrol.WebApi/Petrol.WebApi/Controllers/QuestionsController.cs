@@ -16,9 +16,9 @@ namespace Petrol.WebApi.Controllers
     [ApiController]
     public class QuestionsController : ControllerBase
     {
-        private readonly QuestionRepository _questionRepository;
+        private readonly IQuestionRepository _questionRepository;
 
-        public QuestionsController(QuestionRepository questionRepository) => _questionRepository = questionRepository;
+        public QuestionsController(IQuestionRepository questionRepository) => _questionRepository = questionRepository;
 
         /// <summary>
         /// Gets all the questions

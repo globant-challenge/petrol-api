@@ -10,7 +10,7 @@ namespace Petrol.DataAccess
     /// <summary>
     /// Repository for managing the questions
     /// </summary>
-    public class QuestionRepository
+    public class QuestionRepository : IQuestionRepository
     {
         private readonly PetrolDbContext _petrolDbContext;
 
@@ -46,7 +46,7 @@ namespace Petrol.DataAccess
         {
             var entityToDelete = await _petrolDbContext.Questions.FindAsync(id);
 
-            if(entityToDelete == null)
+            if (entityToDelete == null)
             {
                 throw new EntityNotFoundException();
             }

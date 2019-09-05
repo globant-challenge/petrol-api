@@ -29,9 +29,9 @@ namespace Petrol.WebApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<DataAccess.PetrolDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("sqlDB")));
+            _ = services.AddDbContext<PetrolDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("sqlDB")));
 
-            services.AddTransient<QuestionRepository, QuestionRepository>();
+            services.AddTransient<IQuestionRepository, QuestionRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
