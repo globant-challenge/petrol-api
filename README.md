@@ -14,7 +14,7 @@ It contains the basic instructions for managing questions:
 - Entity Framework Core 2.2
 - xUnit
 
-# Development Environment
+## Development Environment
 
 In order to develop some software should be installed:
 
