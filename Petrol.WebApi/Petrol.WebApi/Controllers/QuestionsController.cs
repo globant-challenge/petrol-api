@@ -108,7 +108,11 @@ namespace Petrol.WebApi.Controllers
             catch (EntityNotFoundException)
             {
                 return NotFound();
-            }            
+            }
+            catch (Exception ex)
+            {
+                return Ok(ex);
+            }
 
             return Ok();
         }
