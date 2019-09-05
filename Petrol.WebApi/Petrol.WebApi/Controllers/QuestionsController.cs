@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Petrol.WebApi.Controllers
 {
+    /// <summary>
+    /// Controller for the question resources
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class QuestionsController : ControllerBase
@@ -17,7 +20,10 @@ namespace Petrol.WebApi.Controllers
 
         public QuestionsController(QuestionRepository questionRepository) => _questionRepository = questionRepository;
 
-
+        /// <summary>
+        /// Gets all the questions
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<QuestionModel>>> Get()
         {
@@ -45,6 +51,11 @@ namespace Petrol.WebApi.Controllers
             return "value";
         }
 
+        /// <summary>
+        /// Inserts a new question
+        /// </summary>
+        /// <param name="question"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<QuestionModel>> Post([FromBody] QuestionModel question)
         {
@@ -57,6 +68,12 @@ namespace Petrol.WebApi.Controllers
             return Created(string.Empty, question);
         }
 
+        /// <summary>
+        /// Updates a question by its id
+        /// </summary>
+        /// <param name="id">The id of the question</param>
+        /// <param name="question">The question to update</param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, [FromBody] QuestionModel question)
         {
@@ -76,6 +93,11 @@ namespace Petrol.WebApi.Controllers
             return Ok();
         }
                 
+        /// <summary>
+        /// Deletes a question by its id
+        /// </summary>
+        /// <param name="id">The id of the question to delete</param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
