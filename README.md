@@ -13,6 +13,7 @@ It contains the basic instructions for managing questions:
 - ASP.NET Core 2.2
 - Entity Framework Core 2.2
 - xUnit
+- SQL Server
 
 ## Development Environment
 
@@ -21,10 +22,12 @@ In order to develop some software should be installed:
 - [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download) (Required)
 - [Visual Studio Code](https://code.visualstudio.com/) (Optional)
 - [Visual Studio 2019](https://visualstudio.microsoft.com/vs) (Optional)
+- [SQL Server](https://www.microsoft.com/es-es/sql-server/sql-server-downloads) (Optional, Azure SQL Database can be used as well)
 
 ## How to run the project from the command line
 - Clone the repository
 - Open the Windows Command Prompt
 - Navigate to the folder where the source code is located and navigate to the Petrol.WebApi folder
+- Open the appsettings.json file and update the "sqlDB" connection string.
 - Type "dotnet run" and press enter
 - Copy the URL with the label "Now listening on" and use it in a tool like PostMan
