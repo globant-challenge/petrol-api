@@ -17,6 +17,8 @@ namespace Petrol.WebApi
 {
     public class Startup
     {
+        private readonly string _origin = "_origin";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -47,6 +49,14 @@ namespace Petrol.WebApi
                 app.UseHsts();
             }
 
+            app.Use((context, next) =>
+            {
+                context.Response.Headers["Access-Control-Allow-Origin"] = "*";
+                context.Response.Headers["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS, PUT, DELETE";
+                
+                return next.Invoke();
+            });
+            
             app.UseHttpsRedirection();
             app.UseMvc();
         }
