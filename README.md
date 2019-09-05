@@ -25,6 +25,6 @@ In order to develop some software should be installed:
 ## How to run the project from the command line
 - Clone the repository
 - Open the Windows Command Prompt
-- Navigate to the folder where the source is located and navigate to Petrol.WebApi folder
+- Navigate to the folder where the source code is located and navigate to the Petrol.WebApi folder
 - Type "dotnet run" and press enter
 - Copy the URL with the label "Now listening on" and use it in a tool like PostMan
