@@ -24,5 +24,23 @@ namespace Petrol.DataAccess
         {
             return await _petrolDbContext.Questions.ToListAsync();
         }
+
+        public async Task DeleteAsync(int id)
+        {
+            var entityToDelete = await _petrolDbContext.Questions.FindAsync(id);
+            _petrolDbContext.Remove(entityToDelete);
+
+            await _petrolDbContext.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(int id, Question question)
+        {
+            var entityToUpdate = await _petrolDbContext.Questions.FindAsync(id);
+
+            entityToUpdate.AskedQuestion = question.AskedQuestion;
+            entityToUpdate.Answer = question.Answer;
+
+            await _petrolDbContext.SaveChangesAsync();
+        }
     }
 }

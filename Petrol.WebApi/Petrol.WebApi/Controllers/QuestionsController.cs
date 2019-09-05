@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Petrol.DataAccess;
+using Petrol.DataAccess.Entities;
 using Petrol.WebApi.Model;
 using System;
 using System.Collections.Generic;
@@ -38,14 +39,12 @@ namespace Petrol.WebApi.Controllers
 
         }
 
-        // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
             return "value";
         }
 
-        // POST api/values
         [HttpPost]
         public async Task<ActionResult<QuestionModel>> Post([FromBody] QuestionModel question)
         {
@@ -58,16 +57,24 @@ namespace Petrol.WebApi.Controllers
             return Created(string.Empty, question);
         }
 
-        // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<ActionResult> Put(int id, [FromBody] QuestionModel question)
         {
-        }
+            await _questionRepository.UpdateAsync(id, new Question
+            {
+                AskedQuestion = question.Question,
+                Answer = question.Answer
+            });
 
-        // DELETE api/values/5
+            return Ok();
+        }
+                
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
+            await _questionRepository.DeleteAsync(id);
+
+            return Ok();
         }
     }
 }
