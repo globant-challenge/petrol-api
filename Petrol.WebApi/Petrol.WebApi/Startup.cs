@@ -53,7 +53,8 @@ namespace Petrol.WebApi
             {
                 context.Response.Headers["Access-Control-Allow-Origin"] = "*";
                 context.Response.Headers["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS, PUT, DELETE";
-                
+                context.Response.Headers["Access-Control-Allow-Headers"] = "Origin, X-Requested-With, Content-Type, Accept,Authorization";
+
                 return next.Invoke();
             });
             
